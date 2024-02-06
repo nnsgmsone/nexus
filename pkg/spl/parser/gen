@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm spl.go
+goyacc -o spl.go -p spl -v spl.output spl.y
+rm spl.output
