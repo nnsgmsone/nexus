@@ -144,7 +144,7 @@ func (u *splSymUnion) setNegative() *tree.Value {
 	return v
 }
 
-//line spl.y:187
+//line spl.y:185
 type splSymType struct {
 	yys   int
 	id    int32
@@ -172,22 +172,20 @@ const DEDUP = 57360
 const DOUBLE = 57361
 const EVAL = 57362
 const FALSE = 57363
-const FLOAT = 57364
-const INT = 57365
-const IMPORT = 57366
-const LIMIT = 57367
-const LONG = 57368
-const LUA = 57369
-const LUA_FILE = 57370
-const NOT = 57371
-const OR = 57372
-const ORDER = 57373
-const EXTRACT = 57374
-const STATS = 57375
-const STRING = 57376
-const TRUE = 57377
-const TYPE = 57378
-const WHERE = 57379
+const IMPORT = 57364
+const LIMIT = 57365
+const LONG = 57366
+const LUA = 57367
+const LUA_FILE = 57368
+const NOT = 57369
+const OR = 57370
+const ORDER = 57371
+const EXTRACT = 57372
+const STATS = 57373
+const STRING = 57374
+const TRUE = 57375
+const TYPE = 57376
+const WHERE = 57377
 
 var splToknames = [...]string{
 	"$end",
@@ -211,8 +209,6 @@ var splToknames = [...]string{
 	"DOUBLE",
 	"EVAL",
 	"FALSE",
-	"FLOAT",
-	"INT",
 	"IMPORT",
 	"LIMIT",
 	"LONG",
@@ -248,7 +244,7 @@ const splEofCode = 1
 const splErrCode = 2
 const splInitialStackSize = 16
 
-//line spl.y:524
+//line spl.y:520
 
 //line yacctab:1
 var splExca = [...]int8{
@@ -256,64 +252,62 @@ var splExca = [...]int8{
 	1, -1,
 	-2, 0,
 	-1, 53,
-	46, 88,
-	-2, 86,
+	44, 86,
+	-2, 84,
 }
 
 const splPrivate = 57344
 
-const splLast = 232
+const splLast = 211
 
 var splAct = [...]uint8{
 	53, 72, 111, 42, 44, 109, 36, 56, 135, 132,
 	26, 133, 133, 75, 96, 27, 102, 67, 38, 97,
-	60, 39, 21, 27, 59, 37, 58, 89, 90, 91,
-	71, 79, 2, 149, 60, 95, 94, 77, 73, 81,
-	82, 83, 84, 85, 80, 68, 79, 66, 76, 92,
-	78, 65, 83, 84, 85, 93, 74, 81, 82, 83,
-	84, 85, 86, 87, 88, 78, 137, 125, 27, 23,
-	24, 101, 134, 25, 79, 60, 60, 38, 100, 73,
+	60, 39, 79, 27, 59, 37, 58, 21, 2, 147,
+	71, 89, 90, 91, 60, 95, 94, 77, 73, 78,
+	68, 79, 66, 65, 80, 4, 76, 23, 24, 92,
+	81, 82, 83, 84, 85, 93, 125, 74, 78, 81,
+	82, 83, 84, 85, 86, 87, 88, 63, 27, 137,
+	134, 101, 83, 84, 85, 60, 60, 38, 100, 73,
 	59, 112, 113, 108, 37, 114, 115, 116, 117, 118,
-	119, 120, 121, 122, 123, 124, 64, 60, 128, 4,
-	127, 129, 107, 60, 131, 106, 70, 73, 28, 47,
-	48, 49, 104, 30, 69, 30, 105, 29, 79, 136,
-	57, 63, 130, 33, 99, 51, 98, 62, 28, 47,
-	48, 49, 28, 41, 34, 139, 138, 78, 148, 50,
-	57, 46, 55, 45, 54, 51, 31, 32, 31, 32,
-	52, 126, 140, 41, 141, 28, 47, 48, 49, 50,
-	35, 43, 40, 45, 61, 103, 12, 57, 22, 5,
-	52, 110, 51, 11, 10, 28, 47, 48, 49, 9,
-	41, 8, 7, 6, 3, 1, 50, 57, 0, 0,
-	45, 0, 51, 0, 19, 0, 14, 52, 0, 0,
-	20, 15, 0, 0, 0, 0, 50, 16, 13, 17,
-	45, 144, 0, 18, 0, 0, 146, 52, 0, 145,
-	142, 0, 0, 143, 0, 0, 0, 0, 0, 0,
-	0, 147,
+	119, 120, 121, 122, 123, 124, 25, 60, 128, 79,
+	127, 129, 107, 60, 131, 106, 29, 73, 28, 47,
+	48, 49, 70, 130, 30, 99, 79, 136, 98, 64,
+	57, 62, 69, 34, 33, 51, 30, 28, 47, 48,
+	49, 41, 28, 78, 46, 139, 138, 50, 146, 57,
+	55, 45, 54, 104, 51, 31, 32, 105, 52, 126,
+	41, 140, 28, 47, 48, 49, 50, 31, 32, 141,
+	45, 35, 43, 40, 57, 61, 103, 52, 110, 51,
+	28, 47, 48, 49, 12, 41, 22, 5, 143, 11,
+	10, 50, 57, 144, 9, 45, 8, 51, 142, 19,
+	7, 14, 52, 20, 15, 6, 145, 3, 1, 50,
+	16, 13, 17, 45, 0, 0, 18, 0, 0, 0,
+	52,
 }
 
 var splPact = [...]int16{
-	-16, -1000, 176, -26, -1000, -1000, -1000, -1000, -1000, -1000,
-	-1000, -1000, -1000, 42, 128, 110, 108, 128, 151, 128,
-	120, 176, 128, 6, 2, -33, -1000, 0, -1000, -1000,
-	-1000, 109, 101, 128, 41, -2, -1000, -9, -1000, 35,
-	-1000, 151, 19, -1000, -1000, 171, -1000, -1000, -1000, -1000,
-	-1000, -1000, 151, -1000, -1000, -1000, -10, -11, -36, -1000,
-	-1000, -31, -1000, -1000, -33, 119, 117, 128, 151, -1000,
-	-1000, -34, -1000, 99, 128, 128, 128, 124, 151, 151,
-	-1000, 171, 171, 171, 171, 171, 171, 171, 171, 171,
-	171, 171, 12, 20, 104, 151, 128, 115, -1000, -1000,
-	-1000, 35, 128, -1000, -1000, -1000, -34, -36, -1000, -38,
-	60, 35, 63, -1000, 12, 12, -1000, -1000, -1000, 1,
-	1, 1, 1, 1, 1, -1000, -1000, -39, 107, -1000,
-	-1000, -1000, 54, 151, 128, -1000, 197, 128, 35, -1000,
-	-14, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000,
+	-18, -1000, 171, -19, -1000, -1000, -1000, -1000, -1000, -1000,
+	-1000, -1000, -1000, 22, 128, 121, 109, 128, 148, 128,
+	114, 171, 128, 0, -1, -31, -1000, -3, -1000, -1000,
+	-1000, 117, 107, 128, 42, -2, -1000, -7, -1000, 30,
+	-1000, 148, 23, -1000, -1000, 166, -1000, -1000, -1000, -1000,
+	-1000, -1000, 148, -1000, -1000, -1000, -8, -9, -34, -1000,
+	-1000, -29, -1000, -1000, -31, 111, 108, 128, 148, -1000,
+	-1000, -32, -1000, 130, 128, 128, 128, 123, 148, 148,
+	-1000, 166, 166, 166, 166, 166, 166, 166, 166, 166,
+	166, 166, 34, 11, 104, 148, 128, 106, -1000, -1000,
+	-1000, 30, 128, -1000, -1000, -1000, -32, -34, -1000, -36,
+	58, 30, 88, -1000, 34, 34, -1000, -1000, -1000, 14,
+	14, 14, 14, 14, 14, -1000, -1000, -37, 105, -1000,
+	-1000, -1000, 57, 148, 128, -1000, 164, 128, 30, -1000,
+	-16, -1000, -1000, -1000, -1000, -1000, -1000, -1000,
 }
 
 var splPgo = [...]uint8{
-	0, 185, 184, 99, 183, 182, 181, 179, 174, 173,
-	169, 168, 166, 165, 73, 10, 0, 7, 4, 26,
-	164, 30, 5, 2, 3, 162, 161, 1, 160, 6,
-	154, 152, 117, 144, 142, 141,
+	0, 198, 197, 45, 195, 190, 186, 184, 180, 179,
+	177, 176, 174, 166, 96, 10, 0, 7, 4, 26,
+	165, 30, 5, 2, 3, 163, 162, 1, 161, 6,
+	159, 151, 106, 142, 140, 134,
 }
 
 var splR1 = [...]int8{
@@ -325,7 +319,7 @@ var splR1 = [...]int8{
 	24, 24, 24, 24, 24, 24, 24, 25, 25, 25,
 	25, 25, 25, 26, 26, 26, 26, 26, 26, 32,
 	32, 32, 35, 35, 33, 33, 34, 31, 30, 30,
-	30, 30, 30, 30, 19, 19, 18, 16, 17,
+	30, 30, 19, 19, 18, 16, 17,
 }
 
 var splR2 = [...]int8{
@@ -337,66 +331,66 @@ var splR2 = [...]int8{
 	2, 3, 3, 3, 3, 3, 1, 3, 3, 3,
 	3, 3, 3, 1, 1, 1, 1, 1, 3, 1,
 	2, 2, 1, 1, 3, 4, 6, 1, 1, 1,
-	1, 1, 1, 1, 1, 3, 1, 1, 1,
+	1, 1, 1, 3, 1, 1, 1,
 }
 
 var splChk = [...]int16{
-	-1000, -1, 48, -2, -3, -10, -4, -5, -6, -7,
-	-8, -9, -12, 32, 20, 25, 31, 33, 37, 18,
-	24, 48, -11, 27, 28, -14, -15, -16, 4, -32,
-	5, 38, 39, 15, -32, -28, -29, -17, -16, -23,
-	-25, 29, -24, -26, -18, 39, -35, 5, 6, 7,
-	35, 21, 46, -16, -33, -34, -17, 16, -19, -18,
-	-16, -20, 7, -3, -14, 45, 45, 50, 45, 5,
-	5, -21, -27, -18, 15, 15, 50, 46, 30, 11,
-	-23, 38, 39, 40, 41, 42, 43, 44, 45, 8,
-	9, 10, -24, -23, 46, 46, 50, 50, 7, 7,
-	-15, -23, 50, -13, 13, 17, -21, -19, -29, -22,
-	47, -23, -23, -23, -24, -24, -24, -24, -24, -24,
-	-24, -24, -24, -24, -24, 47, 47, -22, -23, -18,
-	7, -27, 47, 50, 12, 47, 12, 12, -23, -16,
-	-31, -30, 23, 26, 14, 22, 19, 34, -16, 47,
+	-1000, -1, 46, -2, -3, -10, -4, -5, -6, -7,
+	-8, -9, -12, 30, 20, 23, 29, 31, 35, 18,
+	22, 46, -11, 25, 26, -14, -15, -16, 4, -32,
+	5, 36, 37, 15, -32, -28, -29, -17, -16, -23,
+	-25, 27, -24, -26, -18, 37, -35, 5, 6, 7,
+	33, 21, 44, -16, -33, -34, -17, 16, -19, -18,
+	-16, -20, 7, -3, -14, 43, 43, 48, 43, 5,
+	5, -21, -27, -18, 15, 15, 48, 44, 28, 11,
+	-23, 36, 37, 38, 39, 40, 41, 42, 43, 8,
+	9, 10, -24, -23, 44, 44, 48, 48, 7, 7,
+	-15, -23, 48, -13, 13, 17, -21, -19, -29, -22,
+	45, -23, -23, -23, -24, -24, -24, -24, -24, -24,
+	-24, -24, -24, -24, -24, 45, 45, -22, -23, -18,
+	7, -27, 45, 48, 12, 45, 12, 12, -23, -16,
+	-31, -30, 24, 14, 19, 32, -16, 45,
 }
 
 var splDef = [...]int8{
 	0, -2, 0, 1, 2, 4, 5, 6, 7, 8,
 	9, 10, 11, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0, 15, 24, 0, 87, 17,
-	69, 0, 0, 0, 0, 19, 27, 0, 88, 16,
+	0, 0, 0, 0, 0, 15, 24, 0, 85, 17,
+	69, 0, 0, 0, 0, 19, 27, 0, 86, 16,
 	43, 0, 47, 48, 49, 0, 56, 63, 64, 65,
-	66, 67, 0, -2, 72, 73, 0, 0, 18, 84,
-	86, 21, 22, 3, 12, 0, 0, 0, 0, 70,
+	66, 67, 0, -2, 72, 73, 0, 0, 18, 82,
+	84, 21, 22, 3, 12, 0, 0, 0, 0, 70,
 	71, 33, 35, 40, 0, 0, 0, 0, 0, 0,
 	44, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 50, 0, 0, 0, 0, 0, 13, 14,
 	25, 26, 0, 37, 38, 39, 34, 20, 28, 0,
 	31, 41, 45, 46, 51, 52, 53, 54, 55, 57,
-	58, 59, 60, 61, 62, 68, 74, 0, 0, 85,
+	58, 59, 60, 61, 62, 68, 74, 0, 0, 83,
 	23, 36, 32, 0, 0, 75, 0, 0, 42, 30,
-	0, 77, 78, 79, 80, 81, 82, 83, 29, 76,
+	0, 77, 78, 79, 80, 81, 29, 76,
 }
 
 var splTok1 = [...]int8{
 	1, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 42, 3, 3,
-	46, 47, 40, 38, 50, 39, 3, 41, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 49, 3,
-	43, 45, 44, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 40, 3, 3,
+	44, 45, 38, 36, 48, 37, 3, 39, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 47, 3,
+	41, 43, 42, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 48,
+	3, 3, 3, 3, 46,
 }
 
 var splTok2 = [...]int8{
 	2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 	12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
 	22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-	32, 33, 34, 35, 36, 37,
+	32, 33, 34, 35,
 }
 
 var splTok3 = [...]int8{
@@ -742,19 +736,19 @@ spldefault:
 
 	case 1:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:250
+//line spl.y:248
 		{
 			spllex.(*lexer).SetStmt(splDollar[2].union.SelectStatement())
 		}
 	case 2:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:255
+//line spl.y:253
 		{
 			splVAL.union.val = splDollar[1].union.SelectStatement()
 		}
 	case 3:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:259
+//line spl.y:257
 		{
 			as, bs := splDollar[1].union.SelectStatement(), splDollar[3].union.SelectStatement()
 			as.Cs = append(as.Cs, bs.Cs...)
@@ -762,213 +756,213 @@ spldefault:
 		}
 	case 4:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:266
+//line spl.y:264
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.ExtractStatement())
 		}
 	case 5:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:271
+//line spl.y:269
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.EvalStatement())
 		}
 	case 6:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:276
+//line spl.y:274
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.LimitStatement())
 		}
 	case 7:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:281
+//line spl.y:279
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.OrderStatement())
 		}
 	case 8:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:286
+//line spl.y:284
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.StatsStatement())
 		}
 	case 9:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:291
+//line spl.y:289
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.WhereStatement())
 		}
 	case 10:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:296
+//line spl.y:294
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.StatsStatement())
 		}
 	case 11:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:301
+//line spl.y:299
 		{
 			ss := splVAL.union.SelectStatement()
 			ss.Cs = append(ss.Cs, splDollar[1].union.ImportStatement())
 		}
 	case 12:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:307
+//line spl.y:305
 		{
 			splVAL.union.val = &tree.Extract{Script: splDollar[2].union.extractScriptOpt(), Es: splDollar[3].union.evalExprListStatement()}
 		}
 	case 13:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:312
+//line spl.y:310
 		{
 			splVAL.union.val = tree.ExtractScript{Lua: splDollar[3].union.valueStatement()}
 		}
 	case 14:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:316
+//line spl.y:314
 		{
 			splVAL.union.val = tree.ExtractScript{LuaFile: splDollar[3].union.valueStatement()}
 		}
 	case 15:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:322
+//line spl.y:320
 		{
 			splVAL.union.val = &tree.Eval{splDollar[2].union.evalExprListStatement()}
 		}
 	case 16:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:327
+//line spl.y:325
 		{
 			splVAL.union.val = &tree.Where{splDollar[2].union.exprStatement()}
 		}
 	case 17:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:332
+//line spl.y:330
 		{
 			splVAL.union.val = &tree.Limit{Count: splDollar[2].union.valueStatement()}
 		}
 	case 18:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:337
+//line spl.y:335
 		{
 			splVAL.union.val = &tree.Stats{By: splDollar[2].union.columnNameList()}
 		}
 	case 19:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:343
+//line spl.y:341
 		{
 			splVAL.union.val = &tree.Stats{Ss: splDollar[2].union.statListStatement()}
 		}
 	case 20:
 		splDollar = splS[splpt-4 : splpt+1]
-//line spl.y:347
+//line spl.y:345
 		{
 			splVAL.union.val = &tree.Stats{Ss: splDollar[2].union.statListStatement(), By: splDollar[4].union.columnNameList()}
 		}
 	case 21:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:352
+//line spl.y:350
 		{
 			splVAL.union.val = &tree.Import{Paths: splDollar[2].union.valueStatements()}
 		}
 	case 22:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:357
+//line spl.y:355
 		{
 			splVAL.union.val = []*tree.Value{splDollar[1].union.valueStatement()}
 		}
 	case 23:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:361
+//line spl.y:359
 		{
 			splVAL.union.val = append(splDollar[1].union.valueStatements(), splDollar[3].union.valueStatement())
 		}
 	case 24:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:366
+//line spl.y:364
 		{
 			splVAL.union.val = tree.EvalExprList{splDollar[1].union.evalExprStatement()}
 		}
 	case 25:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:370
+//line spl.y:368
 		{
 			splVAL.union.val = append(splDollar[1].union.evalExprListStatement(), splDollar[3].union.evalExprStatement())
 		}
 	case 26:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:375
+//line spl.y:373
 		{
 			splVAL.union.val = tree.EvalExpr{As: tree.Name(splDollar[1].str), E: splDollar[3].union.exprStatement()}
 		}
 	case 27:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:380
+//line spl.y:378
 		{
 			splVAL.union.val = tree.StatList{splDollar[1].union.statStatement()}
 		}
 	case 28:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:384
+//line spl.y:382
 		{
 			splVAL.union.val = append(splDollar[1].union.statListStatement(), splDollar[3].union.statStatement())
 		}
 	case 29:
 		splDollar = splS[splpt-6 : splpt+1]
-//line spl.y:389
+//line spl.y:387
 		{
 			splVAL.union.val = tree.Stat{F: tree.Name(splDollar[1].str), Es: splDollar[3].union.exprStatements(), As: tree.Name(splDollar[6].str)}
 		}
 	case 30:
 		splDollar = splS[splpt-5 : splpt+1]
-//line spl.y:393
+//line spl.y:391
 		{
 			splVAL.union.val = tree.Stat{F: tree.Name(splDollar[1].str), As: tree.Name(splDollar[5].str)}
 		}
 	case 31:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:397
+//line spl.y:395
 		{
 			splVAL.union.val = tree.Stat{F: tree.Name(splDollar[1].str)}
 		}
 	case 32:
 		splDollar = splS[splpt-4 : splpt+1]
-//line spl.y:401
+//line spl.y:399
 		{
 			splVAL.union.val = tree.Stat{F: tree.Name(splDollar[1].str), Es: splDollar[3].union.exprStatements()}
 		}
 	case 33:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:406
+//line spl.y:404
 		{
 			splVAL.union.val = &tree.OrderBy{Orders: splDollar[3].union.orderListStatement(), Limit: nil}
 		}
 	case 34:
 		splDollar = splS[splpt-4 : splpt+1]
-//line spl.y:410
+//line spl.y:408
 		{
 			splVAL.union.val = &tree.OrderBy{Limit: splDollar[2].union.valueStatement(), Orders: splDollar[4].union.orderListStatement()}
 		}
 	case 35:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:415
+//line spl.y:413
 		{
 			splVAL.union.val = tree.OrderList{splDollar[1].union.orderStatement()}
 		}
 	case 36:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:419
+//line spl.y:417
 		{
 			splVAL.union.val = append(splDollar[1].union.orderListStatement(), splDollar[3].union.orderStatement())
 		}
 	case 37:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:424
+//line spl.y:422
 		{
 			splVAL.union.val = &tree.Order{
 				E:    splDollar[1].union.exprStatement(),
@@ -977,295 +971,283 @@ spldefault:
 		}
 	case 38:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:431
+//line spl.y:429
 		{
 			splVAL.union.val = tree.Ascending
 		}
 	case 39:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:432
+//line spl.y:430
 		{
 			splVAL.union.val = tree.Descending
 		}
 	case 40:
 		splDollar = splS[splpt-0 : splpt+1]
-//line spl.y:433
+//line spl.y:431
 		{
 			splVAL.union.val = tree.DefaultDirection
 		}
 	case 41:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:437
+//line spl.y:435
 		{
 			splVAL.union.val = tree.ExprStatements{splDollar[1].union.exprStatement()}
 		}
 	case 42:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:438
+//line spl.y:436
 		{
 			splVAL.union.val = append(splDollar[1].union.exprStatements(), splDollar[3].union.exprStatement())
 		}
 	case 43:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:440
+//line spl.y:438
 		{
 			splVAL.union.val = splDollar[1].union.exprStatement()
 		}
 	case 44:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:441
+//line spl.y:439
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "not", Args: tree.ExprStatements{splDollar[2].union.exprStatement()}}
 		}
 	case 45:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:442
+//line spl.y:440
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "or", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 46:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:443
+//line spl.y:441
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "and", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 47:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:444
+//line spl.y:442
 		{
 			splVAL.union.val = splDollar[1].union.exprStatement()
 		}
 	case 48:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:446
+//line spl.y:444
 		{
 			splVAL.union.val = splDollar[1].union.exprStatement()
 		}
 	case 49:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:447
+//line spl.y:445
 		{
 			splVAL.union.val = splDollar[1].union.columnName()
 		}
 	case 50:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:448
+//line spl.y:446
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "-", Args: tree.ExprStatements{splDollar[2].union.exprStatement()}}
 		}
 	case 51:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:449
+//line spl.y:447
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "+", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 52:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:450
+//line spl.y:448
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "-", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 53:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:451
+//line spl.y:449
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "*", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 54:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:452
+//line spl.y:450
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "/", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 55:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:453
+//line spl.y:451
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "%", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 56:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:454
+//line spl.y:452
 		{
 			splVAL.union.val = splDollar[1].union.funcStatement()
 		}
 	case 57:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:456
+//line spl.y:454
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "<", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 58:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:457
+//line spl.y:455
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: ">", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 59:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:458
+//line spl.y:456
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "=", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 60:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:459
+//line spl.y:457
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "<=", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 61:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:460
+//line spl.y:458
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: ">=", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 62:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:461
+//line spl.y:459
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "<>", Args: tree.ExprStatements{splDollar[1].union.exprStatement(), splDollar[3].union.exprStatement()}}
 		}
 	case 63:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:463
+//line spl.y:461
 		{
 			splVAL.union.val = splDollar[1].union.valueStatement()
 		}
 	case 64:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:464
+//line spl.y:462
 		{
 			splVAL.union.val = splDollar[1].union.valueStatement()
 		}
 	case 65:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:465
+//line spl.y:463
 		{
 			splVAL.union.val = splDollar[1].union.valueStatement()
 		}
 	case 66:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:466
+//line spl.y:464
 		{
 			splVAL.union.val = &tree.Value{Value: constant.MakeBool(true)}
 		}
 	case 67:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:467
+//line spl.y:465
 		{
 			splVAL.union.val = &tree.Value{Value: constant.MakeBool(false)}
 		}
 	case 68:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:468
+//line spl.y:466
 		{
 			splVAL.union.val = &tree.ParenExpr{splDollar[2].union.exprStatement()}
 		}
 	case 69:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:470
+//line spl.y:468
 		{
 			splVAL.union.val = splDollar[1].union.valueStatement()
 		}
 	case 70:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:471
+//line spl.y:469
 		{
 			splVAL.union.val = splDollar[2].union.valueStatement()
 		}
 	case 71:
 		splDollar = splS[splpt-2 : splpt+1]
-//line spl.y:472
+//line spl.y:470
 		{
 			splVAL.union.val = splDollar[2].union.setNegative()
 		}
 	case 72:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:475
+//line spl.y:473
 		{
 			splVAL.union.val = splDollar[1].union.funcStatement()
 		}
 	case 73:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:479
+//line spl.y:477
 		{
 			splVAL.union.val = splDollar[1].union.funcStatement()
 		}
 	case 74:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:484
+//line spl.y:482
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: splDollar[1].str}
 		}
 	case 75:
 		splDollar = splS[splpt-4 : splpt+1]
-//line spl.y:488
+//line spl.y:486
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: splDollar[1].str, Args: splDollar[3].union.exprStatements()}
 		}
 	case 76:
 		splDollar = splS[splpt-6 : splpt+1]
-//line spl.y:493
+//line spl.y:491
 		{
 			splVAL.union.val = &tree.FuncExpr{Name: "cast", Args: tree.ExprStatements{splDollar[3].union.exprStatement(), splDollar[5].union.exprStatement()}}
 		}
 	case 77:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:497
+//line spl.y:495
 		{
 			splVAL.union.val = splDollar[1].union.exprStatement()
 		}
 	case 78:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:499
+//line spl.y:497
 		{
 			splVAL.union.val = &tree.Value{Value: constant.MakeInt64(0)}
 		}
 	case 79:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:500
-		{
-			splVAL.union.val = &tree.Value{Value: constant.MakeInt64(0)}
-		}
-	case 80:
-		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:501
+//line spl.y:498
 		{
 			splVAL.union.val = &tree.Value{Value: constant.MakeBool(true)}
 		}
-	case 81:
+	case 80:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:502
+//line spl.y:499
 		{
 			splVAL.union.val = &tree.Value{Value: constant.MakeFloat64(0)}
+		}
+	case 81:
+		splDollar = splS[splpt-1 : splpt+1]
+//line spl.y:500
+		{
+			splVAL.union.val = &tree.Value{Value: constant.MakeString("")}
 		}
 	case 82:
 		splDollar = splS[splpt-1 : splpt+1]
 //line spl.y:503
 		{
-			splVAL.union.val = &tree.Value{Value: constant.MakeFloat64(0)}
-		}
-	case 83:
-		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:504
-		{
-			splVAL.union.val = &tree.Value{Value: constant.MakeString("")}
-		}
-	case 84:
-		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:507
-		{
 			splVAL.union.val = tree.ColumnNameList{splDollar[1].union.columnName()}
 		}
-	case 85:
+	case 83:
 		splDollar = splS[splpt-3 : splpt+1]
-//line spl.y:511
+//line spl.y:507
 		{
 			splVAL.union.val = append(splDollar[1].union.columnNameList(), splDollar[3].union.columnName())
 		}
-	case 86:
+	case 84:
 		splDollar = splS[splpt-1 : splpt+1]
-//line spl.y:516
+//line spl.y:512
 		{
 			splVAL.union.val = tree.ColumnName{Path: tree.Name(splDollar[1].str)}
 		}

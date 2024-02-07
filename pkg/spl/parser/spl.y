@@ -159,9 +159,7 @@ func (u *splSymUnion) setNegative() *tree.Value{
 %token <str> EVAL
 
 %token <str> FALSE
-%token <str> FLOAT
 
-%token <str> INT
 %token <str> IMPORT
 
 %token <str> LIMIT
@@ -496,10 +494,8 @@ func_expr_common_subexpr: CAST '(' a_expr AS cast_target ')'
 
 cast_target: typename { $$.val = $1.exprStatement() }
 
-typename: INT       { $$.val = &tree.Value{Value: constant.MakeInt64(0)} }
-        | LONG      { $$.val = &tree.Value{Value: constant.MakeInt64(0)} }
+typename: LONG      { $$.val = &tree.Value{Value: constant.MakeInt64(0)} }
         | BOOL      { $$.val = &tree.Value{Value: constant.MakeBool(true)} }
-        | FLOAT     { $$.val = &tree.Value{Value: constant.MakeFloat64(0)} }
         | DOUBLE    { $$.val = &tree.Value{Value: constant.MakeFloat64(0)} }
         | STRING    { $$.val = &tree.Value{Value: constant.MakeString("")} }
 
