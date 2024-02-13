@@ -57,5 +57,8 @@ func TestNoah(t *testing.T) {
 		rows += rvec.Length()
 	}
 	require.Equal(t, 0, rows)
-
+	err = fs.ChDir("..")
+	require.NoError(t, err)
+	err = fs.Remove("noah-data")
+	require.NoError(t, err)
 }
