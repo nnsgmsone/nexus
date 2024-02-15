@@ -27,8 +27,9 @@ func (b *Build) buildStatement(stmt *tree.Select) (*Plan, error) {
 	if err != nil {
 		return nil, err
 	}
+	root = Optimize(root)
 	return &Plan{
-		Root: Optimize(root),
+		Root: remapColPos(root),
 	}, nil
 }
 
@@ -112,4 +113,12 @@ func newScope(in *Scope, typ int) *Scope {
 	out.ScopeType = typ
 	out.Children = append(out.Children, in)
 	return out
+}
+
+func dupScope(in, s *Scope) *Scope {
+	r := new(Scope)
+	*r = *s
+	in.Parent = r
+	r.Children = []*Scope{in}
+	return r
 }

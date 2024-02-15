@@ -24,6 +24,10 @@ type Type struct {
 	size int32 // e.g. int64.Size = 8
 }
 
+type Equaled interface {
+	bool | int64 | float64
+}
+
 type String [2]uint64
 
 func (typ *Type) Oid() T {

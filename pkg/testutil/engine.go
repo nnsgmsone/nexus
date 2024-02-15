@@ -19,6 +19,7 @@ package testutil
 
 import (
 	"bytes"
+	"fmt"
 
 	"github.com/nnsgmsone/nexus/pkg/container/vector"
 	"github.com/nnsgmsone/nexus/pkg/defines"
@@ -50,7 +51,7 @@ func (d *testEngine) NewReader(_ *process.Process) (engine.Reader, error) {
 }
 
 func (r *testReader) Specialize() error {
-	r.cnt = 10 // test count
+	r.cnt = 2 // test count
 	return nil
 }
 
@@ -59,7 +60,11 @@ func (r *testReader) Read(vec *vector.Vector, buf *bytes.Buffer) error {
 	if r.cnt == 0 {
 		return nil
 	}
-	appendStringVector(defines.DefaultRows, vec, false)
+	for i := 0; i < defines.DefaultRows; i++ {
+		if err := vector.AppendString(vec, []byte(fmt.Sprintf("%d,%d,%d\n", i, i+1, i+2)), false); err != nil {
+			panic(err)
+		}
+	}
 	r.cnt--
 	return nil
 }

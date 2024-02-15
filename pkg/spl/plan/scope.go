@@ -99,6 +99,8 @@ func (s *Scope) hasAttribute(id uint32) bool {
 		return relID, colID
 	}
 	switch s.ScopeType {
+	case Scan_Scope:
+		s.Scan.Extract.E.IterateAllColExpr(fn)
 	case Order_Scope:
 		for i := range s.Order.Orders {
 			s.Order.Orders[i].E.IterateAllColExpr(fn)

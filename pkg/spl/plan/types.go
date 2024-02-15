@@ -80,6 +80,7 @@ type Extract struct {
 }
 
 type Scan struct {
+	Extract *Extract
 }
 
 type ScopeAttribute struct {
@@ -152,7 +153,10 @@ func (i Direction) String() string {
 }
 
 func (n *Scan) String() string {
-	return ""
+	if n.Extract != nil {
+		return n.Extract.String()
+	}
+	return "Scan"
 }
 
 func (n *Import) String() string {
@@ -169,7 +173,7 @@ func (n *Import) String() string {
 }
 
 func (n *Extract) String() string {
-	return fmt.Sprintf("extract lua = %s, %v, %s", n.Lua, n.Cols, n.E)
+	return fmt.Sprintf("Extract lua = %s, %v, %s", n.Lua, n.Cols, n.E)
 }
 
 func (n *Limit) String() string {

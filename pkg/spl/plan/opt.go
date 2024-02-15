@@ -5,9 +5,9 @@ import "fmt"
 var ruleRegistry []Rule
 
 const (
-	StopPushdownRuleID = 0x01
-	PruneColumnRuleID  = 0x02
-	RemapColPosRuleID  = 0x04
+	StopPushdownRuleID    = 0x01
+	PruneColumnRuleID     = 0x02
+	ExtractPushDownRuleID = 0x04
 )
 
 func init() {
@@ -16,7 +16,7 @@ func init() {
 	ruleRegistry = []Rule{
 		NewStopPushdownRule(),
 		NewPruneColumn(),
-		NewRemapColPosRule(),
+		NewExtractPushDownRule(),
 	}
 	for _, rule := range ruleRegistry {
 		if id&rule.ID() != 0 {

@@ -1,21 +1,6 @@
 package plan
 
-type remapColPos struct {
-}
-
-func NewRemapColPosRule() *remapColPos {
-	return &remapColPos{}
-}
-
-func (r *remapColPos) ID() uint64 {
-	return RemapColPosRuleID
-}
-
-func (r *remapColPos) Name() string {
-	return "remap_colpos"
-}
-
-func (r *remapColPos) Apply(root *Scope) *Scope {
+func remapColPos(root *Scope) *Scope {
 	fn := func(relPos uint32, colPos uint32) (uint32, uint32) {
 		if root.ScopeType == Scan_Scope {
 			return relPos, uint32(root.findAttributeIndexByID(colPos))
@@ -45,6 +30,9 @@ func (r *remapColPos) Apply(root *Scope) *Scope {
 		for i := range root.Projection.ProjectionList {
 			root.Projection.ProjectionList[i].IterateAllColExpr(fn)
 		}
+	}
+	for i := range root.Children {
+		root.Children[i] = remapColPos(root.Children[i])
 	}
 	return root
 }
