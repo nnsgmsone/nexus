@@ -14,7 +14,7 @@ func remapColPos(root *Scope) *Scope {
 			root.Group.GroupBy[i].IterateAllColExpr(fn)
 		}
 		for i := range root.Group.AggList {
-			for j := range root.Group.AggList {
+			for j := range root.Group.AggList[i].Es {
 				root.Group.AggList[i].Es[j].IterateAllColExpr(fn)
 			}
 		}

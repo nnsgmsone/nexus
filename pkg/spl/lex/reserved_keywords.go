@@ -26,7 +26,7 @@ func GetKeywordID(k string) int32 {
 		return EVAL
 	case "false":
 		return FALSE
-	case "doube":
+	case "double":
 		return DOUBLE
 	case "import":
 		return IMPORT

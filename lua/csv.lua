@@ -1,3 +1,8 @@
+-- csv.lua - parse and format csv
+-- Usage: cat csv.txt | lua csv.lua
+-- Input: csv.txt
+-- Output: {field1, field2, field3..},{field1, field2, field3...}...
+-- Author: nnsgmsone
 function parseCSVLine(line)
 	local fields = {}
 	for v in string.gmatch(line, '([^,]+)') do

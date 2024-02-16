@@ -50,4 +50,10 @@ func TestBuild(t *testing.T) {
 	plan, err = New("| import \"1.csv\", \"2.csv\"", fs, e).Build()
 	require.NoError(t, err)
 	fmt.Printf("%s\n", plan.Root)
+	plan, err = New("| extract lua = \"x\" a = 1, c = 3", fs, e).Build()
+	require.NoError(t, err)
+	fmt.Printf("%s\n", plan.Root)
+	plan, err = New(" | extract lua = `goroutine.lua` a=0, b=1, c =2 | stats min(b), sum(cast(c as double)) by a;", fs, e).Build()
+	require.NoError(t, err)
+	fmt.Printf("%s\n", plan.Root)
 }

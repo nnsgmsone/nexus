@@ -110,7 +110,7 @@ func (s *Scope) hasAttribute(id uint32) bool {
 			s.Group.GroupBy[i].IterateAllColExpr(fn)
 		}
 		for i := range s.Group.AggList {
-			for j := range s.Group.AggList {
+			for j := range s.Group.AggList[i].Es {
 				s.Group.AggList[i].Es[j].IterateAllColExpr(fn)
 			}
 		}

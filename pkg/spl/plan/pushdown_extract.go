@@ -16,17 +16,20 @@ func (r *extractPushDownRule) Name() string {
 }
 
 func (r *extractPushDownRule) Apply(root *Scope) *Scope {
-	if len(root.Children) == 1 && root.Children[0].ScopeType == Extract_Scope &&
-		len(root.Children[0].Children) == 1 && root.Children[0].Children[0].ScopeType == Scan_Scope {
-		// scan -> extract ->  root
-		scanScope := &Scope{
-			ScopeType: Scan_Scope,
-			Attrs:     root.Children[0].Attrs,
-			Scan: &Scan{
-				Extract: root.Children[0].Extract,
-			},
+	if root.ScopeType == Extract_Scope &&
+		len(root.Children) == 1 && root.Children[0].ScopeType == Scan_Scope {
+		// scan -> extract -> parent ==> scan -> parent
+		scanScope := new(Scope)
+		*scanScope = *root.Children[0]
+		scanScope.Attrs = root.Attrs
+		scanScope.Scan = &Scan{
+			Extract: root.Extract,
 		}
-		root = dupScope(scanScope, root)
+		scanScope.Parent = root.Parent
+		if root.Parent != nil {
+			root.Parent.Children = []*Scope{scanScope}
+		}
+		root = scanScope
 	}
 	return root
 }

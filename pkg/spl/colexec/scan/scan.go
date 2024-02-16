@@ -115,27 +115,31 @@ func (o *ScanOp) Free() error {
 
 func (o *ScanOp) Read(p []byte) (int, error) {
 	for {
-		ok, err := o.nextReader()
-		if err != nil {
-			return 0, err
-		}
-		if ok {
-			if err := o.r.Read(o.vec, o.buf); err != nil {
-				return 0, err
-			}
-			if o.vec.Length() == 0 {
-				return 0, io.EOF
-			}
-			o.strs = vector.GetColumnValue[types.String](o.vec)
-			rc, err := o.vec.GetReader(o.strs[0])
+		if o.rc == nil {
+			ok, err := o.nextReader()
 			if err != nil {
 				return 0, err
 			}
-			o.strs = o.strs[1:]
-			o.rc = rc
+			if ok {
+				if err := o.r.Read(o.vec, o.buf); err != nil {
+					return 0, err
+				}
+				if o.vec.Length() == 0 {
+					return 0, io.EOF
+				}
+				o.strs = vector.GetColumnValue[types.String](o.vec)
+				rc, err := o.vec.GetReader(o.strs[0])
+				if err != nil {
+					return 0, err
+				}
+				o.strs = o.strs[1:]
+				o.rc = rc
+			}
 		}
 		n, err := o.rc.Read(p)
 		if n == 0 && err == io.EOF {
+			o.rc.Close()
+			o.rc = nil
 			continue
 		}
 		if err != nil {

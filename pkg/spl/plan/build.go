@@ -114,11 +114,3 @@ func newScope(in *Scope, typ int) *Scope {
 	out.Children = append(out.Children, in)
 	return out
 }
-
-func dupScope(in, s *Scope) *Scope {
-	r := new(Scope)
-	*r = *s
-	in.Parent = r
-	r.Children = []*Scope{in}
-	return r
-}

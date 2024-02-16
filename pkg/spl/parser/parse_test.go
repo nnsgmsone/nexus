@@ -20,4 +20,7 @@ func TestParser(t *testing.T) {
 	stmt, err = Parse("| import \"1.csv\", \"2.csv\"")
 	require.NoError(t, err)
 	fmt.Printf("%s\n", stmt)
+	stmt, err = Parse("| extract lua = `x` a = 0 | eval a = cast(a as double)")
+	require.NoError(t, err)
+	fmt.Printf("%s\n", stmt)
 }
