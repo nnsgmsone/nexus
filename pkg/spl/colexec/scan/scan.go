@@ -68,7 +68,9 @@ func (o *ScanOp) Specialize() error {
 		return 0
 	}))
 	o.state.ch = make(chan *lua.LTable)
+	o.state.wg.Add(1)
 	go func() {
+		defer o.state.wg.Done()
 		err := o.state.l.DoString(o.lua)
 		if err != nil {
 			panic(err)
@@ -109,6 +111,7 @@ func (o *ScanOp) Free() error {
 	o.bat = nil
 	o.buf = nil
 	o.msgs = nil
+	o.state.wg.Wait()
 	o.state.l.Close()
 	return nil
 }

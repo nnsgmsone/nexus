@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"sync"
 
 	"github.com/nnsgmsone/nexus/pkg/container/batch"
 	"github.com/nnsgmsone/nexus/pkg/container/types"
@@ -20,6 +21,7 @@ const (
 
 type luaState struct {
 	l  *lua.LState
+	wg sync.WaitGroup
 	ch chan *lua.LTable
 }
 

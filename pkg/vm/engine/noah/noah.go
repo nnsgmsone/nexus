@@ -45,10 +45,7 @@ func (n *noah) Write(vec *vector.Vector) error {
 	if err != nil {
 		return err
 	}
-	id, err := uuid.NewV7()
-	if err != nil {
-		return err
-	}
+	id := uuid.New()
 	if err := n.fs.WriteFile(id.String(), data); err != nil {
 		return err
 	}

@@ -45,3 +45,34 @@ func TestBatch(t *testing.T) {
 		require.Equal(t, vec.String(), nbat.vecs[i].String())
 	}
 }
+
+func TestBatchMarshalAndUnmarshal(t *testing.T) {
+	fs := vfs.NewMemFS()
+	bat := New(2, fs)
+	{
+		vec, err := vector.New(vector.FLAT, types.New(types.T_int64), fs)
+		require.NoError(t, err)
+		for i := 0; i < 10; i++ {
+			err = vector.Append(vec, int64(i), false)
+			require.NoError(t, err)
+		}
+		bat.SetVector(0, vec)
+	}
+	{
+		vec, err := vector.New(vector.FLAT, types.New(types.T_int64), fs)
+		require.NoError(t, err)
+		for i := 0; i < 10; i++ {
+			err = vector.Append(vec, int64(i), false)
+			require.NoError(t, err)
+		}
+		bat.SetVector(1, vec)
+	}
+	data, err := bat.MarshalBinary()
+	require.NoError(t, err)
+	nbat := New(1, fs)
+	err = nbat.UnmarshalBinary(data)
+	require.NoError(t, err)
+	for i, vec := range bat.vecs {
+		require.Equal(t, vec.String(), nbat.vecs[i].String())
+	}
+}

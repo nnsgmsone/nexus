@@ -115,6 +115,7 @@ func (bat *Batch) UnmarshalBinary(data []byte) error {
 			return err
 		}
 		bat.vecs[i] = vec
+		data = data[size:]
 	}
 	return nil
 }

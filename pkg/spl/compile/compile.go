@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"runtime"
+	"sync"
 
 	"github.com/nnsgmsone/nexus/pkg/container/batch"
 	"github.com/nnsgmsone/nexus/pkg/container/types"
@@ -50,16 +51,20 @@ func (c *Compile) Compile() error {
 
 func (c *Compile) Run() error {
 	var err error
+	var wg sync.WaitGroup
 
 	defer c.free()
 	if err = c.specialize(); err != nil {
 		return err
 	}
+	wg.Add(1)
 	go func() {
 		err = c.ws.Run()
+		wg.Done()
 	}()
 	c.wg.Wait()
 	c.ws.Stop()
+	wg.Wait()
 	return err
 }
 
